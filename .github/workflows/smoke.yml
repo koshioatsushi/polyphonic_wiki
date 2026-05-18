@@ -1,0 +1,22 @@
+name: smoke
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run synthetic fixture lint
+        run: |
+          mkdir -p /tmp/polyphonic_wiki_fixture/topics
+          cp examples/topic-ai-agent-governance.md /tmp/polyphonic_wiki_fixture/topics/ai-agent-governance.md
+          python tools/polyphonic_lint.py --wiki /tmp/polyphonic_wiki_fixture --today 2026-05-18
+      - name: Check automation CLI
+        run: |
+          python tools/polyphonic_auto.py --help

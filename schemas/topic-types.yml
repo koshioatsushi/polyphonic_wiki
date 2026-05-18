@@ -1,0 +1,27 @@
+default:
+  required: [P1]
+  recommended: [P1.5, P2, P3]
+
+product_hypothesis:
+  required: [P1, P2]
+  recommended: [P1.5, P3]
+
+research_claim:
+  required: [P1, P3]
+  recommended: [P1.5, P2]
+
+decision_trace:
+  required: [P1]
+  recommended: [P1.5, P2, P3]
+
+field_pattern:
+  required: [P2]
+  recommended: [P1, P3]
+
+public_issue:
+  required: [P3]
+  recommended: [P1, P2]
+
+creative_work:
+  required: [P1]
+  recommended: [P1.5, P2]

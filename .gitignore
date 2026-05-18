@@ -1,0 +1,46 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Private runtime data created by actual use
+inbox/*
+topics/*
+voices/**/*
+decisions/*
+tensions/*
+events/queue/*
+events/processed/*
+events/rejected/*
+logs/*
+reports/*
+archive/inputs/*
+sources/*
+
+# Keep directory placeholders
+!inbox/.gitkeep
+!topics/.gitkeep
+!voices/**/.gitkeep
+!decisions/.gitkeep
+!tensions/.gitkeep
+!events/queue/.gitkeep
+!events/processed/.gitkeep
+!events/rejected/.gitkeep
+!logs/.gitkeep
+!reports/.gitkeep
+!archive/inputs/.gitkeep
+!sources/.gitkeep
+
+# Local-only configs / secrets
+.env
+*.local.json
+config/local*.json

@@ -1,0 +1,76 @@
+# Minimal schema for a reusable voice entry.
+# This is descriptive rather than executable; keep entries Markdown-native.
+
+required:
+  - voice_layer
+  - evidence_state
+  - source_position
+
+# Voice provenance: where the memory came from.
+voice_layer:
+  allowed:
+    - P1       # first-person
+    - P1.5     # AI-mediated
+    - P2       # field / relational voice
+    - P3       # public anchor
+
+# Lifecycle / support state. This is separate from voice_layer.
+evidence_state:
+  allowed:
+    - captured
+    - interpreted
+    - supported
+    - externally_anchored
+    - contested
+    - contradicted
+    - stale
+    - retired
+
+source_position:
+  allowed:
+    - self
+    - ai_dialogue
+    - field_reaction
+    - public_anchor
+    - mixed
+
+sensitivity:
+  allowed:
+    - public
+    - internal
+    - private
+    - confidential
+
+retention_policy:
+  allowed:
+    - keep
+    - distill
+    - refresh
+    - decay
+    - retrieve_on_demand
+
+# Optional. Useful when a line refers to public, institutional, or otherwise inspectable material.
+source_quality:
+  allowed:
+    - official
+    - academic
+    - reputable_media
+    - industry
+    - personal
+    - unknown
+
+# P1.5 entries are thinking aids, not evidence.
+p15_required_when_voice_layer_is_p15:
+  - use_as
+  - not_use_as:factual_evidence
+
+# P2 entries need privacy metadata.
+p2_required_when_voice_layer_is_p2:
+  - speaker_role
+  - privacy
+  - consent
+
+# P3 entries need source and freshness metadata.
+p3_required_when_voice_layer_is_p3:
+  - anchor_strength
+  - refresh_after

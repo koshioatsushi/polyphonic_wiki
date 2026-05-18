@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: polyphonic_wiki
+message: "If you use polyphonic_wiki in research, please cite the repository."
+authors:
+  - name: polyphonic_wiki contributors
+version: 0.1.0
+license: MIT
